@@ -3,25 +3,31 @@
 
 @import "{{ site.theme }}";
 
-// Center the main content horizontally
-body {
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
+// Simple centering approach - wrap everything in a centered container
+html, body {
   margin: 0;
-  padding: 20px;
-  box-sizing: border-box;
+  padding: 0;
+  width: 100%;
 }
 
-// Target the main wrapper that contains all content
-.wrapper {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
+body {
+  background: white;
+  padding: 40px;
 }
 
-// Ensure the content sections are properly contained
-section {
-  max-width: none;
-  width: 100%;
+// Create a centered wrapper for all content
+body::before {
+  content: '';
+  display: block;
+  width: 25%;
+  float: left;
+}
+
+// Alternatively, use a more direct approach
+@media (min-width: 768px) {
+  body {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+  }
 }
