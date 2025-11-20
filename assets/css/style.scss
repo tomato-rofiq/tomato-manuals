@@ -4,22 +4,24 @@
 @import "{{ site.theme }}";
 
 // Center the main content horizontally
-.wrapper {
-  margin: 0 auto;
-  max-width: 1200px; // Adjust this value to control maximum width
-  padding: 0 20px; // Add some padding on the sides for smaller screens
-}
-
-// Alternative approach if the above doesn't work
 body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 1200px;
+// Target the main wrapper that contains all content
+.wrapper {
+  max-width: 1000px;
   width: 100%;
-  padding: 0 20px;
+  margin: 0 auto;
+}
+
+// Ensure the content sections are properly contained
+section {
+  max-width: none;
+  width: 100%;
 }
