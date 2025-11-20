@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Docker 上で Keycloak を始める方法"
 permalink: /keycloak/setup/
 ---
