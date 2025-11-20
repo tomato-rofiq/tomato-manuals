@@ -1,6 +1,6 @@
 layout: page
 title: "Docker 上で Keycloak を始める方法"
-permalink: /keycloak/setup/
+permalink: /tomato-manuals/keycloak/setup/
 
 # Docker 上で Keycloak を始める方法
 
