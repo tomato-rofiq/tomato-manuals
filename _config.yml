@@ -1,3 +1,12 @@
 theme: jekyll-theme-minimal
 title: tomato-manuals by rofiq
 description: 社内で利用できるように、私が作成したガイドや学習用資料を見つけることができます。
+
+# Navigation menu items
+navigation:
+  - name: Home
+    url: /
+  - name: Keycloak Setup
+    url: /KEYCLOAK-SETUP
+  - name: GitHub
+    url: https://github.com/tomato-rofiq/tomato-manuals

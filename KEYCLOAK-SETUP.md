@@ -104,5 +104,6 @@ Although you've created a user, they don't have any credentials to login with so
 4. click save.
 
 ![set password](./assets/images/set_password.png)
+![set password](./assets/images/password_result.png)
 
 
