@@ -28,11 +28,6 @@
           <ul>
             <li><a href="{{ site.baseurl | default: '/' }}">Home</a></li>
             <li><a href="{{ site.baseurl }}/keycloak/setup">Keycloak Setup</a></li>
-            {% for item in site.navigation %}
-              {% unless item.name == 'Home' or item.name == 'Keycloak Setup' %}
-                <li><a href="{{ item.url }}">{{ item.name }}</a></li>
-              {% endunless %}
-            {% endfor %}
           </ul>
         </nav>
 
@@ -61,7 +56,6 @@
         {% if site.github.is_project_page %}
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
