@@ -7,6 +7,6 @@ navigation:
   - name: Home
     url: /
   - name: Keycloak Setup
-    url: /KEYCLOAK-SETUP
+    url: https://github.com/tomato-rofiq/tomato-manuals/keycloak/setup
   - name: GitHub
     url: https://github.com/tomato-rofiq/tomato-manuals

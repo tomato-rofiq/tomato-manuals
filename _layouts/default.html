@@ -27,7 +27,7 @@
         <nav class="header-nav">
           <ul>
             <li><a href="{{ site.baseurl | default: '/' }}">Home</a></li>
-            <li><a href="{{ site.baseurl }}/KEYCLOAK-SETUP">Keycloak Setup</a></li>
+            <li><a href="{{ site.baseurl }}/keycloak/setup">Keycloak Setup</a></li>
             {% for item in site.navigation %}
               {% unless item.name == 'Home' or item.name == 'Keycloak Setup' %}
                 <li><a href="{{ item.url }}">{{ item.name }}</a></li>
