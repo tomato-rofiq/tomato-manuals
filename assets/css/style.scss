@@ -18,12 +18,12 @@
 }
 
 .header-nav li {
-  display: inline;
-  margin-right: 20px;
+  display: block;
+  margin-bottom: 8px;
 }
 
 .header-nav li:last-child {
-  margin-right: 0;
+  margin-bottom: 0;
 }
 
 .header-nav a {
@@ -38,13 +38,5 @@
 }
 
 @media screen and (max-width: 480px) {
-  .header-nav li {
-    display: block;
-    margin-right: 0;
-    margin-bottom: 8px;
-  }
-  
-  .header-nav li:last-child {
-    margin-bottom: 0;
-  }
+  /* Vertical layout is already applied globally, no need for special mobile styles */
 }
