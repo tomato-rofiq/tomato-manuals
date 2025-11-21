@@ -10,4 +10,4 @@ Collection of manuals and learning resources used internally.
 
 ## Available Manuals
 
-- [Keycloak Setup Guide](/keycloak/setup/) - Docker上でKeycloakを始める方法
+- [Keycloak Setup Guide](https://tomato-rofiq.github.io/tomato-manuals/keycloak/setup/) - Docker上でKeycloakを始める方法
