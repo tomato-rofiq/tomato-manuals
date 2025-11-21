@@ -4,11 +4,11 @@
 @import "{{ site.theme }}";
 
 /* Simple header navigation styles */
-.header-nav {
+header .header-nav {
   margin: 20px 0;
 }
 
-.header-nav ul {
+header .header-nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -17,23 +17,24 @@
   padding: 15px 0;
 }
 
-.header-nav li {
-  display: block;
+header .header-nav li {
+  display: block !important;
   margin-bottom: 8px;
+  margin-right: 0;
 }
 
-.header-nav li:last-child {
+header .header-nav li:last-child {
   margin-bottom: 0;
 }
 
-.header-nav a {
+header .header-nav a {
   color: #39c;
   font-weight: 500;
   text-decoration: none;
   font-size: 14px;
 }
 
-.header-nav a:hover {
+header .header-nav a:hover {
   text-decoration: underline;
 }
 
