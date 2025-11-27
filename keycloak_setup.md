@@ -54,54 +54,53 @@ docker run -p 127.0.0.1:8080:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -e KC_BOO
 
 ![admin console home](./assets/images/admin_console_home.png)
 
-## Create a Realm
+## Realm（レルム）の作成
 
-A realm in Keycloak is equivalent to a tenant. Each realm allows an administrator to create isolated groups of applications and users. Initially, Keycloak includes a single realm, called master. Use this realm only for managing Keycloak and not for managing any applications.
+Keycloak における realm（レルム） は、テナントに相当します。各レルムでは、管理者がアプリケーションやユーザーを分離して管理できます。初期状態では master と呼ばれるレルムが 1 つだけ含まれています。この master レルムは Keycloak 自体を管理するためのものであり、アプリケーションの管理には使用しないでください。
 
-Practically, a single realm should be used by one application (technically called a "client") because within this realm you may define roles to users of your application and because JWTs issued to your client are realm-specific.
+一般的に、1 つのレルムは 1 つのアプリケーション（Keycloak の用語では「クライアント」）で使用することが推奨されます。これは、レルム内でアプリケーションのユーザー向けのロールを定義できること、またクライアントに発行される JWT がレルム固有であるためです。
 
-You can also have separate realms for different dev environments. For example, three realms for dev, staging, and production. Or you can have different realms to manage users of different companies. For example myapp-company1, myapp-company2, and so on.
+開発環境ごとにレルムを分けることもできます。例えば、開発（dev）、ステージング（staging）、本番（production）で 3 つのレルムを用意する運用があります。また、会社ごとにユーザーを分離したい場合は、myapp-company1、myapp-company2 のように複数のレルムを作成することも可能です。
 
-Let's create your first realm.
+それでは、最初のレルムを作成してみましょう。
 
-1. click "Manage realms" from the left-hand menu.
-2. click "Create realm"
+1. 左側メニューから 「Manage realms」 をクリックします。
+2. 「Create realm」 をクリックします。
 
 ![manage realms](./assets/images/manage_realms.png)
 
-3. Enter `myrealm` in the Realm name field and click create.
+3. 「Realm name」欄に `myrealm` と入力し、**Create** をクリックします。  
 
 ![create realm](./assets/images/create_realm.png)
 ![create realm result](./assets/images/create_realm2.png)
 
-## Create a User
+## ユーザーの作成
 
-1. Verify that you are still in the myrealm realm.
-2. Click "Users" in the left-hand menu.
+1. まだ `myrealm` レルムにいることを確認します。  
+2. 左側メニューの 「Users」 をクリックします。  
 
 ![create realm result](./assets/images/create_realm2.png)
 
-3. Click "Create new user".
+3. 「Create new user」 をクリックします。  
 
 ![users](./assets/images/users.png)
-
 ![create user](./assets/images/create_user.png)
 
-4. Fill in the form with the following values:
-    - Username: myuser
-    - First name: any first name
-    - Last name: any last name
-5. Click "Create".
+4. 以下の値でフォームを入力します：  
+    - Username: myuser  
+    - First name: 任意の名前  
+    - Last name: 任意の名字  
+5. 「Create」 をクリックします。  
 
-Although you've created a user, they don't have any credentials to login with so next let's give the newly created user a password.
+ユーザーを作成しましたが、まだログイン用の認証情報はありません。次に、作成したユーザーにパスワードを設定します。  
 
-1. Click Credentials at the top of the page and click set password.
+1. ページ上部の 「Credentials」 をクリックし、「Set Password」 をクリックします。  
 
 ![credentials](./assets/images/credentials.png)
 
-2. Fill in the Set password form with a password.
-3. Toggle Temporary to Off so that the user does not need to update this password at the first login.
-4. click save.
+2. 「Set password」フォームにパスワードを入力します。  
+3. Temporary を Off に切り替え、ユーザーが初回ログイン時にパスワードを変更する必要がないようにします。  
+4. Save をクリックします。  
 
 ![set password](./assets/images/set_password.png)
 ![set password](./assets/images/password_result.png)
