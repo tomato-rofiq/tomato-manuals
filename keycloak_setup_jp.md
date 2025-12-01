@@ -4,7 +4,10 @@ title: "Docker 上で Keycloak を始める方法"
 permalink: /keycloak/jp/setup/
 ---
 
+**最終更新日：2025年12月（作成者：Rofiq）**
+
 # Docker 上で Keycloak を始める方法
+
 
 本ガイドは、Keycloak.org が提供する公式「Getting Started」ドキュメント [getting-started-docker](https://www.keycloak.org/getting-started/getting-started-docker) をもとに、日本語の読者向けに作成されたものです。
 
@@ -174,6 +177,10 @@ Keycloak における realm（レルム） は、テナントに相当します�
 
 これで本ガイドは終了です。
 
-## where to continue next
+## 次に進む場所
 
-You might recall that in this guide, we used keycloak's own testing application that's deployed and available publically for learning as the client. The next step from this is to run our own SPA locally and try to implement keycloak on it programmatically. This is considered as a client side implementation of keycloak and we will begin from the next guide called: [JavaScript ベースのシングルページアプリケーション（SPA）に Keycloak を実装する方法](https://tomato-rofiq.github.io/tomato-manuals/keycloak/frontjs/).
+このガイドでは、Keycloak が学習用に公開しているテスト用アプリケーションをクライアントとして使用しました。  
+次のステップは、自分のローカル環境で SPA を動作させ、Keycloak をプログラム的に実装してみることです。これは **Keycloak のクライアントサイド実装** と呼ばれるもので、次のガイドで解説を開始します：
+
+[JavaScript ベースのシングルページアプリケーション（SPA）に Keycloak を実装する方法](https://tomato-rofiq.github.io/tomato-manuals/keycloak/frontjs/)
+
