@@ -8,7 +8,8 @@ permalink: /keycloak/setup/
 
 本ガイドは、Keycloak.org が提供する公式「Getting Started」ドキュメント [getting-started-docker](https://www.keycloak.org/getting-started/getting-started-docker) をもとに、日本語の読者向けに作成されたものです。
 
-this guide is intended to teach you how to use the basic features of the keycloak admin console running in docker. after you've finished this guide, please read the "how to implement keycloak for javascript SPAs (single page applications)" guide. 
+このガイドは、Docker 上で稼働している Keycloak 管理コンソールの基本機能を使いこなすためのものです。
+本ガイドを完了した後は、[JavaScript ベースのシングルページアプリケーション（SPA）に Keycloak を実装する方法](https://tomato-rofiq.github.io/tomato-manuals/keycloak/frontjs/) のガイドも併せてお読みください。
 
 ## 前提条件
 
@@ -107,63 +108,68 @@ Keycloak における realm（レルム） は、テナントに相当します�
 ![set password](./assets/images/set_password.png)
 ![set password](./assets/images/password_result.png)
 
-## Secure the first application
+## 最初のアプリケーションを保護する
 
-we will now try to implement keycloak onto a client. A 'client' in this case means any application that uses keycloak in order to authenticate its users. For this guide, we will use a SPA provided by keycloak for testing this feature. More details are provided later on in this section.
+クライアントへの Keycloak の実装を試してみましょう。ここでいう「クライアント」とは、ユーザー認証のために Keycloak を利用する任意のアプリケーションを指します。このガイドでは、Keycloak が提供しているテスト用の SPA（シングルページアプリケーション）を使用します。詳細はこのセクションの後半で説明します。
 
-firstly, make sure that your current realm is "myrealm" which is the realm you've created from following this guide.
+まず、現在の Realm が、このガイドで作成した「myrealm」になっていることを確認してください。
 
-1. from the left hand menu, click "Clients"
-2. click "Create client"
+1. 左メニューから「Clients」をクリック
+2. 「Create client」をクリック
 
 ![clients](./assets/images/clients.png)
 
-3. Fill in the form with the following values:
+3. 次の値を入力します：
     - Client type: OpenID Connect
     - Client ID: myclient
 
 ![create client](./assets/images/new_client.png)
 
-4. Click next
-5. Make sure that the Standard Flow checkbox is checked in the Authentication Flow options
+4. 「Next」をクリックします  
+5. Authentication Flow の項目で Standard Flow にチェックが入っていることを確認します
 
 ![create client auth flow](./assets/images/new_client2.png)
 
-6. click next
-7. fill in the form with the following vales:
+6. 「Next」をクリックします  
+7. 次の値を入力します：
     - Valid redirect URIs: `https://www.keycloak.org/app/*`
     - Web origins: `https://www.keycloak.org`
 
-since we are using keycloak's SPA for testing, the URIs above point to where the SPA is being hosted at.
+上記の URI は、Keycloak が提供しているテスト用 SPA を使用するため、その SPA がホストされている場所を指しています。
 
 ![create client login settings](./assets/images/new_client_uri.png)
 
-8. click save
+8. 「Save」をクリックします
 
-after you click save, you will be redirected to the settings page of your created client. 
+「Save」をクリックすると、作成したクライアントの設定ページへリダイレクトされます。
 
-the way to test if the client is working properly is to first go to keycloak's SPA testing app at [keycloak-testing-spa](https://www.keycloak.org/app/).
+クライアントが正しく動作しているかを確認するには、まず Keycloak の SPA テスト用アプリ  
+[Keycloak Testing SPA](https://www.keycloak.org/app/) にアクセスします。
 
-there you will see a form that takes information about your keycloak client such as what URL is keycloak being accessed at, what realm is the client in, and which client exactly are you testing?
+このページには、Keycloak クライアントに関する情報（Keycloak へのアクセス URL、クライアントが属する Realm、どのクライアントをテストするのか等）を入力するフォームがあります。
 
-we will use the default values in the form since they already match the data we created from the keycloak admin console.
+フォームには、Keycloak 管理コンソールで作成した内容と一致するデフォルト値がすでに入力されているため、そのまま使用します。
 
 ![keycloak spa init](./assets/images/keycloak_spa.png)
 
-when you click save, you'll see a sign in button and clear config button.
+「Save」をクリックすると、「Sign in」ボタンと「Clear config」ボタンが表示されます。
 
 ![keycloak spa done](./assets/images/keycloak_spa_config.png)
 
-click the sign in button and you will be redirected to the SPA that has been connected to your created client. The SPA is basically just a simple login screen you can sign into using the credentials of the `myuser` user you had created earlier in this guide.
+「Sign in」ボタンをクリックすると、作成したクライアントに接続された SPA にリダイレクトされます。  
+この SPA は基本的にシンプルなログイン画面で、先ほどこのガイドで作成した `myuser` ユーザーの認証情報を使ってログインできます。
 
 ![keycloak spa login](./assets/images/myrealm_login.png)
 
-you are able to login because the user you created was made in the `myclient` client which was made in the `myrealm` realm.
+ログインできるのは、作成したユーザーが `myrealm` レルム内の `myclient` クライアントに作成されているためです。
 
-after you click the sign in button from the login screen for the first time, you'll be prompted to update the account information.
+ログイン画面の「Sign in」ボタンを初回クリックすると、アカウント情報の更新を求められます。
 
 ![keycloak first login](./assets/images/first_login.png)
 
-After updating the account information you will be redirected to the post login screen which shows the name of the account holder and a sign out button to indicate that you've successfully signed in.
+アカウント情報を更新すると、ログイン後の画面にリダイレクトされます。  
+この画面にはアカウント名と「Sign out」ボタンが表示され、正常にサインインできたことを確認できます。
 
 ![keycloak first login](./assets/images/post_login.png)
+
+これで本ガイドは終了です。
