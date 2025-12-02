@@ -182,5 +182,5 @@ Keycloak における realm（レルム） は、テナントに相当します�
 このガイドでは、Keycloak が学習用に公開しているテスト用アプリケーションをクライアントとして使用しました。  
 次のステップは、自分のローカル環境で SPA を動作させ、Keycloak をプログラム的に実装してみることです。これは **Keycloak のクライアントサイド実装** と呼ばれるもので、次のガイドで解説を開始します：
 
-[JavaScript ベースのシングルページアプリケーション（SPA）に Keycloak を実装する方法](https://tomato-rofiq.github.io/tomato-manuals/keycloak/frontjs/)
+[JavaScript ベースのシングルページアプリケーション（SPA）に Keycloak を実装する方法](https://tomato-rofiq.github.io/tomato-manuals/keycloak/en/quickjs/)
 
