@@ -4,7 +4,7 @@ title: "Docker 上で Keycloak を始める方法"
 permalink: /keycloak/jp/setup/
 ---
 
-**最終更新日：2025年12月（作成者：Rofiq）** [JP](https://tomato-rofiq.github.io/tomato-manuals/keycloak/jp/setup) | EN
+**最終更新日：2025年12月（作成者：Rofiq）** [JP](https://tomato-rofiq.github.io/tomato-manuals/keycloak/jp/setup) EN
 
 # Docker 上で Keycloak を始める方法
 
