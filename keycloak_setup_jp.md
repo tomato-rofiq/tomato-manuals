@@ -4,7 +4,7 @@ title: "Docker 上で Keycloak を始める方法"
 permalink: /keycloak/jp/setup/
 ---
 
-**最終更新日：2025年12月（作成者：Rofiq）**
+**最終更新日：2025年12月（作成者：Rofiq）** [JP](https://tomato-rofiq.github.io/tomato-manuals/keycloak/jp/setup) | EN
 
 # Docker 上で Keycloak を始める方法
 
@@ -12,7 +12,7 @@ permalink: /keycloak/jp/setup/
 本ガイドは、Keycloak.org が提供する公式「Getting Started」ドキュメント [getting-started-docker](https://www.keycloak.org/getting-started/getting-started-docker) をもとに、日本語の読者向けに作成されたものです。
 
 このガイドは、Docker 上で稼働している Keycloak 管理コンソールの基本機能を使いこなすためのものです。
-本ガイドを完了した後は、[JavaScript ベースのシングルページアプリケーション（SPA）に Keycloak を実装する方法](https://tomato-rofiq.github.io/tomato-manuals/keycloak/frontjs/) のガイドも併せてお読みください。
+本ガイドを完了した後は、[JavaScript ベースのシングルページアプリケーション（SPA）に Keycloak を実装する方法](https://tomato-rofiq.github.io/tomato-manuals/keycloak/en/quickjs) のガイドも併せてお読みください。
 
 ## 前提条件
 
