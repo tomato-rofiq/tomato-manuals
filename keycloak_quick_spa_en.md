@@ -4,7 +4,7 @@ title: "JavaScript ベースのシングルページアプリケーション（S
 permalink: /keycloak/en/quickjs/
 ---
 
-**最終更新日：2025年12月（作成者：Rofiq）** [JP](https://tomato-rofiq.github.io/tomato-manuals/keycloak/jp/quickjs) | [EN](https://tomato-rofiq.github.io/tomato-manuals/keycloak/en/quickjs)
+**最終更新日：2025年12月（作成者：Rofiq）** [JP](https://tomato-rofiq.github.io/tomato-manuals/keycloak/jp/quickjs) [EN](https://tomato-rofiq.github.io/tomato-manuals/keycloak/en/quickjs)
 
 # How to implement Keycloak in a JavaScript-based Single Page Application (SPA)
 
