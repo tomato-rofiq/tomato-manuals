@@ -157,3 +157,36 @@ this marks the end of the quickstart.
 
 now we will take a closer look at the source code of the keycloak implementation on the quickstart SPA. our aim is to try to understand what is actually programmed in the SPA that makes keycloak work in it.
 
+please open the index.html file located at: `keycloak-quickstarts/js/spa/public/index.html`.
+
+from the top of the html code, inside the `<head>` is the keycloak import. it imports the keycloak-js npm package which allows you to use the features of keycloak in your application.
+
+```html
+<script type="importmap">
+  {
+    "imports": {
+      "keycloak-js": "/vendor/keycloak.js"
+    }
+  }
+</script>
+<link rel="modulepreload" href="/vendor/keycloak.js">
+```
+
+there are a few ways to import keycloak-js and this is only one example. if you are curious, i suggest just asking any llm about other ways to import keycloak while referencing this code.
+
+the next section of the html is the div in the `<body>` which contains all the buttons you saw at the top of the screen. there isn't much to else to explain.
+
+```html
+<div id="user" style="display: none;">
+  <button id="logout" type="button">Logout</button>
+  <button id="showMyAccount" type="button">My Account</button>
+  <button id="showIdToken" type="button">Show ID Token</button>
+  <button id="showAccessToken" type="button">Show Access Token</button>
+  <button id="refreshToken" type="button">Refresh</button>
+  <hr>
+  <h2 id="name"></h2>
+  <pre id="output"></pre>
+</div>
+```
+
+inside the script that follows the div is the most important part of this html. it shows the simplest examples for how to use some of keycloak's features.
