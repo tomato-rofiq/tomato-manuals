@@ -17,7 +17,7 @@ Why did i choose to focus on JS technologies? because a majority of the world's 
 I won't cover any DB material in regards to making endpoints in your backend since that isn't really within scope of these guides and i want to keep this as easy to follow as possible.
 
 - [Keycloak Setup Guide](https://tomato-rofiq.github.io/tomato-manuals/keycloak/jp/setup/) - Docker上でKeycloakを始める方法
-- [Keycloak on SPA Implementation Guide](https://tomato-rofiq.github.io/tomato-manuals/keycloak/en/quickjs/) - JavaScript ベースのシングルページアプリケーション（SPA）に Keycloak を実装する方法
+- [Keycloak on SPA Implementation Guide](https://tomato-rofiq.github.io/tomato-manuals/keycloak/jp/quickjs/) - JavaScript ベースのシングルページアプリケーション（SPA）に Keycloak を実装する方法
 
 ## Other Guides
 
