@@ -190,3 +190,81 @@ the next section of the html is the div in the `<body>` which contains all the b
 ```
 
 inside the script that follows the div is the most important part of this html. it shows the simplest examples for how to use some of keycloak's features.
+
+```js
+import Keycloak from "keycloak-js";
+const outputElement = document.getElementById("output");
+const nameElement = document.getElementById("name");
+const userElement = document.getElementById("user");
+```
+
+the JS code begins by import the keycloak-js library and getting references to the DOM elements from the div.
+
+following this code are 2 helper functions, `output(content)` and `showProfile()` which are used by the button handlers written after them.
+
+```js
+function output(content) {
+  if (typeof content === "object") {
+    content = JSON.stringify(content, null, 2);
+  }
+
+  outputElement.textContent = content;
+}
+
+function showProfile() {
+  const name =
+    keycloak.idTokenParsed.name ||
+    keycloak.idTokenParsed.preferred_username;
+
+  nameElement.textContent = `Hello ${name}`;
+  userElement.style.display = "block";
+}
+```
+
+`output(content)` displays content in the output area, converting objects to formatted JSON. `showProfile()` extracts the user's name from the ID token and displays it, then shows the user interface.
+
+after this code are the button handlers. there are five handlers corresponding to the five buttons.
+
+the logout handler calls `keycloak.logout()` which logs out the user.
+
+the showIdToken handler calls `keycloak.idTokenParsed` which returns the ID token to be parsed by the `output()` helper function.
+
+the showAccessToken handler calls `keycloak.tokenParsed` which returns the acess token to be parsed by the `output()` helper function. 
+
+notice that the refreshToken handler is an async function. the reason for this is because it is calling `keycloak.updateToken(-1)` which uses await. this particular keycloak function takes in a number representing the seconds after a token expires for keycloak to refresh it. -1 means that it should refresh the token immediately.
+
+after refreshing the token, the new token is parsed by `output()` helper function. the `showProfile()` helper function called after that to re-render the user's name in case that information changed between refreshes even though it is unlikely.
+
+the showMyAccount handler is also an async function because it calls `keycloak.accountManagement()` which again uses await. this keycloak function redirects the user to keycloak's account management screen (note that this is different from the keycloak administration console).
+
+```js
+const keycloak = new Keycloak({
+  url: "http://localhost:8180",
+  realm: "quickstart",
+  clientId: "spa",
+});
+```
+
+this code is used to create a keycloak instance in order to connect to a local keycloak server using the parameters in the constructor. so in this case, this instance is looking for a keycloak server on port 8180 containing a realm called "quickstart" containing a clientId of "spa".
+
+without the code above, this SPA would not be able to communicate with our keycloak server running locally in docker.
+
+```js
+await keycloak.init({ onLoad: "login-required" });
+```
+
+this line of code is what actually triggers the rendering of the login page belonging to our client. note that this is not the login screen of the keycloak admin console. 
+
+![quickstart user login](./assets/images/quickstart_login.png)
+
+`onLoad: "login-required"` basically says that when the page loads, login is required, thus show the login screen if the user is not currently authenticated.
+
+lastly, the `showProfile()` function is called in the next line in order to show the user's name immediately after they've logged in.
+
+## Closing Remarks
+
+after following this guide, you should think about which lines specifically are essential for a successful client to keycloak server connection. then based on those lines of code, make sure that its procedure of implementation makes sense in your head. after that, you can try to apply that procedure on a more practical web application to verify that it is correct. 
+
+that is what we are going to do in the next guide here: [implementing keycloak on a ReactJS application]().
+
+
