@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "JavaScript ベースのシングルページアプリケーション（SPA）に Keycloak を実装する方法"
+title: "How to implement Keycloak in a JavaScript-based Single Page Application (SPA)"
 permalink: /keycloak/en/quickjs/
 ---
 
@@ -265,6 +265,6 @@ lastly, the `showProfile()` function is called in the next line in order to show
 
 after following this guide, you should think about which lines specifically are essential for a successful client to keycloak server connection. then based on those lines of code, make sure that its procedure of implementation makes sense in your head. after that, you can try to apply that procedure on a more practical web application to verify that it is correct. 
 
-that is what we are going to do in the next guide here: [implementing keycloak on a ReactJS application]().
+that is what we are going to do in the next guide here: [implementing keycloak on a ReactJS application](https://tomato-rofiq.github.io/tomato-manuals/keycloak/jp/react).
 
 

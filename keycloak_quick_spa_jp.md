@@ -296,4 +296,4 @@ await keycloak.init({ onLoad: "login-required" });
 そのうえで、今回のクイックスタートで学んだ流れを、より実践的な Web アプリケーションで再現できるか試してみると、理解がより深まります。
 
 次のガイドでは、それを踏まえて **ReactJS アプリケーションへの Keycloak 実装** を行います：  
-[implementing keycloak on a ReactJS application]()
+[implementing keycloak on a ReactJS application](https://tomato-rofiq.github.io/tomato-manuals/keycloak/jp/react).
